@@ -1,0 +1,44 @@
+"ExpressPCB Netlist"
+"LTspice"
+1
+0
+0
+""
+""
+""
+"Part IDs Table"
+"Vin" "12" ""
+"Vg" "PULSE(0 12 0 1n 1n 1.83u 6.67u)" ""
+"M1" "IRFZ44N" ""
+"D1" "MBRS360" ""
+"L1" "22µ" ""
+"Cin" "100µ" ""
+"Cout" "220µ" ""
+"Rload" "1.1" ""
+
+"Net Names Table"
+"IN" 1
+"0" 5
+"N001" 9
+"OUT-" 11
+"OUT+" 15
+
+"Net Connections Table"
+1 1 1 2
+1 4 2 3
+1 5 1 4
+1 6 1 0
+2 1 2 6
+2 2 2 7
+2 3 3 8
+2 6 2 0
+3 2 1 10
+3 3 2 0
+4 3 1 12
+4 4 1 13
+4 7 2 14
+4 8 2 0
+5 5 2 16
+5 7 1 17
+5 8 1 0
+
