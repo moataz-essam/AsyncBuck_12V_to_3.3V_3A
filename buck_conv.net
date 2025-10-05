@@ -1,0 +1,30 @@
+* D:\Personal\Moataz Folder\Design Projects\LTspice\Power_Electronics_Projects\async_buck_converter_12V_3.3V_3A\buck_conv.asc
+Vin IN 0 12
+Vg N001 0 PULSE(0 12 0 1n 1n 1.83u 6.67u)
+M1 OUT- N001 0 0 IRFZ44N
+D1 OUT- IN MBRS360
+L1 IN OUT+ 22µ Ipk=4.96 Rser=0.0407 Rpar=19022.6 Cpar=0 mfg="Coilcraft" pn="MSS1260-223"
+Cin IN 0 100µ V=25 Irms=116m Rser=0.169 Lser=5.162n mfg="Würth Elektronik" pn="865230453006 WCAP-AS5H 8x10,5" type="Al electrolytic"
+Cout OUT+ OUT- 220µ V=6.3 Irms=3.87298 Rser=0.015 Lser=0 mfg="KEMET" pn="A700X227M006ATE015" type="Al electrolytic"
+Rload OUT+ OUT- 1.1
+.model D D
+.lib C:\Users\Moat'az\AppData\Local\LTspice\lib\cmp\standard.dio
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Users\Moat'az\AppData\Local\LTspice\lib\cmp\standard.mos
+* (150 kHz, 27.5% duty cycle)
+.tran 0 5m 0 10n
+* --- Measurements (steady-state 2ms..5ms) ---
+.meas tran Vout_avg  AVG V(out+)-V(out-) FROM=2m TO=5m
+.meas tran Vout_min  MIN V(out+)-V(out-) FROM=2m TO=5m
+.meas tran Vout_max  MAX V(out+)-V(out-) FROM=2m TO=5m
+.meas tran Vout_ripple PARAM Vout_max - Vout_min
+.meas tran IL_avg    AVG I(L1) FROM=2m TO=5m
+.meas tran IL_min    MIN I(L1) FROM=2m TO=5m
+.meas tran IL_max    MAX I(L1) FROM=2m TO=5m
+.meas tran IL_ripple PARAM IL_max - IL_min
+.meas tran Pout AVG ((V(out+)-V(out-))*I(Rload)) FROM=2m TO=5m
+.meas tran Pin AVG(V(IN)*I(Vin)) FROM=2m TO=5m
+.meas tran Eff  PARAM Pout/(-Pin)*100
+.backanno
+.end
