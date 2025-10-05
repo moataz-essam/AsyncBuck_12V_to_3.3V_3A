@@ -1,10 +1,10 @@
 --- Bill of Materials ---
 
-Ref.	Mfg.				Part No.				Description
+Ref.	  Mfg.				              Part No.				                Description
 
-Cin	Würth Elektronik		865230453006 WCAP-AS5H 8x10,5		capacitor, 100µF, 25V
-Cout	KEMET				A700X227M006ATE015			capacitor, 220µF, 6.3V
-D1	OnSemi				MBRS360					diode
-L1	Coilcraft			MSS1260-223				inductor, 22µH, 4.96A pk
-M1	International Rectifier		IRFZ44N	MOSFET
-Rload	--				--					resistor, 1.1
+Cin	    Würth Elektronik		      865230453006 WCAP-AS5H 8x10,5		capacitor, 100µF, 25V
+Cout	  KEMET				              A700X227M006ATE015			        capacitor, 220µF, 6.3V
+D1	    OnSemi				            MBRS360					                diode
+L1	    Coilcraft			            MSS1260-223				              inductor, 22µH, 4.96A pk
+M1	    International Rectifier		IRFZ44N	                        MOSFET
+Rload	  --				                --					                    resistor, 1.1
